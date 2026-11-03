@@ -4,11 +4,12 @@ on: push
 jobs:
   tests:
     runs-on: ubuntu-latest
+    container: golang:1.27
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
-        with:
-          go-version: go.mod
+      # - uses: actions/setup-go@v5
+      #   with:
+      #     go-version: go.mod
 
       - name: Run Unit tests
         run: go test -v ./...
